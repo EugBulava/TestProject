@@ -1,10 +1,32 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   color: white;
   font-size: 2rem;
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.userName {
+  font-size: 20px;
+  color: yellow
+}
+
+.userIcon,
+.userName,
+.userButton {
+  margin: 0 10px !important;
+}
+
+.pageName {
+  margin: 0 20px;
+}
+
+

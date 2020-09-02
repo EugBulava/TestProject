@@ -12,6 +12,7 @@ import { changeAuthorizationState, changeUserId } from '../../pages/AuthPage/act
 import { users } from '../../constants/users'
 
 import styles from './authForm.module.css'
+import { store } from '../../store/store';
 
 const AuthFormComponent = ({currentLogin, currentPass, handleLoginChange, handlePasswordChange, handleButtonClick }) => {
 
@@ -38,7 +39,7 @@ const AuthFormComponent = ({currentLogin, currentPass, handleLoginChange, handle
     <Container className={styles.container} maxWidth="sm">
       <form className={styles.authForm} autoComplete="off">
         <span className={styles.enterText}>Enter to the system</span>
-        <TextField className={styles.textInput} label="Login" variant="outlined" onChange={handleLoginChange} />
+        <TextField className={styles.textInput} min={"1"} max={"10"} label="Login" variant="outlined" onChange={handleLoginChange} />
         <TextField className={styles.textInput} label="Password" type="password" variant="outlined" onChange={handlePasswordChange} />
         <Button className={styles.enteryButton} type={"submit"} size="large" variant="contained" color="primary" onClick={handleButtonClick(currentLogin, currentPass, setVisibleProgress, handleClickWithErrorValues)}>Log In</Button>
         {visibleProgress ? (
@@ -76,12 +77,13 @@ const mapDispatchToProps = (dispatch) => ({
     users.map((user) => {
       if(user.validLogin === currentLogin && user.validPass === currentPass) {
         signIn = true;
+        localStorage.setItem('auth', true);
+        localStorage.setItem('userId', user.id);
+        dispatch(changeUserId(user.id));
         setTimeout(() => {
           dispatch(changeAuthorizationState(true));
-          localStorage.setItem('auth', true);
-          dispatch(changeUserId(user.id));
-          localStorage.setItem('userId', user.id);
           setVisibleProgress(false);
+          console.log(store.getState())
         }, 2000);
       }
       return user;

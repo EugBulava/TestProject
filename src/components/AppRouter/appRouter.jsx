@@ -11,6 +11,7 @@ import { AuthPage } from '../../pages/AuthPage/authPage';
 import { Page1 } from '../../pages/Page1/page1';
 import { Page2 } from '../../pages/Page2/page2';
 import { Page3 } from '../../pages/Page3/page3';
+import { MainPage } from '../../pages/MainPage/mainPage';
 
 function AppRouter() {
   return (
@@ -29,6 +30,9 @@ function AppRouter() {
         </Route>
         <Route path="/page_3">
           <Page3 />
+        </Route>
+        <Route path="/">
+          <MainPage />
         </Route>
       </Switch>
   </Router>)
