@@ -1,0 +1,22 @@
+.listContainer {
+  display: flex;
+  overflow: scroll; 
+  margin-top: 10px;
+  width: 500px; 
+  height: 400px; 
+  padding: 5px; 
+  scroll-behavior: smooth;
+}
+
+.list {
+  width: 100% !important;
+}
+
+.listContainer::-webkit-scrollbar { width: 0; height: 0px; background-color: rgba(0, 0, 0, 0.37);} 
+.listContainer::-webkit-scrollbar-button { background-color: black; width: 10px;}
+.listContainer::-webkit-scrollbar-thumb { height: 0px; background-color: rgba(0, 0, 0, 0.67); border-radius: 5px;}
+
+.listContainer:hover::-webkit-scrollbar { width: 15px; height: 0px; background-color: rgba(0, 0, 0, 0.37);}
+.listContainer:hover::-webkit-scrollbar-button {  background-color: black; width: 10px; }
+.listContainer:hover::-webkit-scrollbar-thumb { height: 50px; background-color: rgba(0, 0, 0, 0.67); border-radius: 5px;}
+

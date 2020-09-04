@@ -44,8 +44,10 @@ const mapDispatchToProps = (dispatch) => ({
   handleLogOutButton: () => {
     localStorage.setItem('auth', false);
     localStorage.setItem('userId', null);
-    dispatch(changeAuthorizationState(false));
-    dispatch(changeUserId(null))
+    setTimeout(() => {
+      dispatch(changeAuthorizationState(false));
+      dispatch(changeUserId(null))
+    }, 1000)
   }
 })
 

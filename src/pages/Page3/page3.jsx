@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
+import { Container } from '@material-ui/core';
 
 const Page3Component = ({ isAuthenticated }) => {
   if(!isAuthenticated) {
@@ -11,7 +12,11 @@ const Page3Component = ({ isAuthenticated }) => {
     }}/>
     )
   }
-  return <h2>Page 3</h2>;
+  return (
+    <Container maxWidth={"md"}>
+      <h2>Page 3</h2>
+    </Container>
+  )
 }
 
 const mapStateToProps = (state) => {

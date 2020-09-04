@@ -8,11 +8,10 @@ import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
 
 import { changeLoginForm, changePasswordForm } from './actions';
-import { changeAuthorizationState, changeUserId } from '../../pages/AuthPage/actions';
-import { users } from '../../constants/users'
+import { changeAuthorizationState, changeUserId } from '../../../../pages/AuthPage/actions';
+import { users } from '../../../../constants/users'
 
 import styles from './authForm.module.css'
-import { store } from '../../store/store';
 
 const AuthFormComponent = ({currentLogin, currentPass, handleLoginChange, handlePasswordChange, handleButtonClick }) => {
 
@@ -83,7 +82,6 @@ const mapDispatchToProps = (dispatch) => ({
         setTimeout(() => {
           dispatch(changeAuthorizationState(true));
           setVisibleProgress(false);
-          console.log(store.getState())
         }, 2000);
       }
       return user;

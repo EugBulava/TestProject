@@ -13,28 +13,32 @@ import { Page2 } from '../../pages/Page2/page2';
 import { Page3 } from '../../pages/Page3/page3';
 import { MainPage } from '../../pages/MainPage/mainPage';
 
+import styles from './appRouter.module.css'
+
 function AppRouter() {
   return (
   <Router>
       <Header />
-      <Navigation />
-      <Switch>
-        <Route path="/auth">
-          <AuthPage />
-        </Route>
-        <Route path="/page_1">
-          <Page1 />
-        </Route>
-        <Route path="/page_2">
-          <Page2 />
-        </Route>
-        <Route path="/page_3">
-          <Page3 />
-        </Route>
-        <Route path="/">
-          <MainPage />
-        </Route>
-      </Switch>
+      <div className={styles.mainContainer}>
+        <Navigation />
+        <Switch>
+          <Route path="/auth">
+            <AuthPage />
+          </Route>
+          <Route path="/page_1">
+            <Page1 />
+          </Route>
+          <Route path="/page_2">
+            <Page2 />
+          </Route>
+          <Route path="/page_3">
+            <Page3 />
+          </Route>
+          <Route path="/">
+            <MainPage />
+          </Route>
+        </Switch>
+      </div>
   </Router>)
 }
 

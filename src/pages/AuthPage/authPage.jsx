@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 
-import { AuthForm } from '../../components/AuthForm/authForm';
+import { AuthForm } from './components/AuthForm/authForm';
 
 const AuthPageComponent = ({ isAuthenticated }) => {
   if(isAuthenticated) {
